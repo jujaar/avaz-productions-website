@@ -145,7 +145,7 @@ body {
 }
 
 #about {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('about.jpg') center center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('about2.png') center center/cover no-repeat;
     padding-top: 0.1rem;
 }
 
