@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avāz Productions</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Libre+Bodoni:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="floatingMenu" class="floating-menu">
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="floating-nav">
+            <li><a href="#home" class="home-link">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <header>
+        <h1 class="logo"><span class="kalam">Avāz</span> <span class="studios">Productions</span></h1>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div id="background-video" class="vimeo-background">
+                <iframe src="https://player.vimeo.com/video/1086593185?background=1&autoplay=1&loop=1&byline=0&title=0&portrait=0&badge=0&autopause=0&muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <button id="playWithSound" class="workslink watch-button" aria-label="Watch video with sound">
+                WATCH
+            </button>
+            <!-- Downward Arrow Scroll Button -->
+            <button id="scrollDownArrow" class="scroll-down-arrow" aria-label="Scroll to Services">
+                <span class="arrow-circle">
+                    <svg class="arrow-svg" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="8,12 16,20 24,12"/>
+                    </svg>
+                </span>
+            </button>
+        </section>
+
+        <section id="services" class="section">
+            <h2 class="section-title">Services</h2>
+            <div class="services-slider">
+                <button class="arrow prev main-arrow-left" aria-label="Previous slide" style="display: none;">
+                    <svg class="arrow-svg" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20,8 12,16 20,24"/>
+                    </svg>
+                </button>
+                <div class="slides-wrapper">
+                    <div class="slides-track">
+                        <div class="slide active">
+                            <div class="slide-image">
+                                <img src="service1.png" alt="Service 1" />
+                            </div>
+                            <div class="slide-content">
+                                <h2 class="service-title">COMMERCIALS</h2>
+                                <p class="service-description">
+                                    We produce cinematic, commercial-style videos that spotlight your product or brand through a compelling, story-driven narrative.
+                                </p>
+                                <button class="workslink">PLAY VIDEO</button>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="service2.png" alt="Service 2" />
+                            </div>
+                            <div class="slide-content">
+                                <h2 class="service-title">INDIVIDUALS</h2>
+                                <p class="service-description">
+                                    We work with individuals who have powerful stories or missions, bringing their vision to life through cinematic content that sparks high impact connection.
+                                </p>
+                                <button class="workslink">PLAY VIDEO</button>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="service3.png" alt="Service 3" />
+                            </div>
+                            <div class="slide-content">
+                                <h2 class="service-title">BUSINESSES</h2>
+                                <p class="service-description">
+                                    We help businesses create consistent, high-quality video content that strengthens brand identity and deepens connections with their customers.
+                                </p>
+                                <button class="workslink">PLAY VIDEO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="arrow next main-arrow" aria-label="Next slide">
+                    <svg class="arrow-svg" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="12,8 20,16 12,24"/>
+                    </svg>
+                </button>
+                <div class="slider-dots">
+                    <button class="dot active"></button>
+                    <button class="dot"></button>
+                    <button class="dot"></button>
+                </div>
+            </div>
+        </section>
+
+        <section id="works" class="section">
+            <h2>Works</h2>
+            <div class="content">
+                <div class="works-list">
+                  <div class="work-row">
+                    <img src="game6.jpg" alt="GAME6" class="work-image" />
+                    <div class="work-info">
+                      <h3 class="work-title">GAME6</h3>
+                      <p class="work-desc">Basketball facility / program located in Toronto</p>
+                    </div>
+                  </div>
+                  <div class="work-row highlight">
+                    <img src="teja.jpg" alt="TEJA SINGH" class="work-image" />
+                    <div class="work-info">
+                      <h3 class="work-title">TEJA SINGH</h3>
+                      <p class="work-desc">Basketball star for Hamilton College</p>
+                    </div>
+                  </div>
+                  <div class="work-row">
+                    <img src="baden.jpg" alt="BADEN" class="work-image" />
+                    <div class="work-info">
+                      <h3 class="work-title">BADEN</h3>
+                      <p class="work-desc">Sports equipment company</p>
+                    </div>
+                  </div>
+                  <div class="work-row">
+                    <img src="harjit.jpg" alt="HARJIT SAJJAN" class="work-image" />
+                    <div class="work-info">
+                      <h3 class="work-title">HARJIT SAJJAN</h3>
+                      <p class="work-desc">Former Canadadian Minister of National Defence, Canadian armed forces, and Vancouver Police</p>
+                    </div>
+                  </div>
+                  <div class="work-row highlight">
+                    <img src="hamilton.jpg" alt="HAMILTON COLLEGE" class="work-image" />
+                    <div class="work-info">
+                      <h3 class="work-title">HAMILTON COLLEGE</h3>
+                      <p class="work-desc">NCAA Division 3 College</p>
+                    </div>
+                  </div>
+                  <div class="work-row">
+                    <img src="cardinalboys.jpg" alt="CARDINAL BOYS" class="work-image" />
+                    <div class="work-info">
+                      <h3 class="work-title">CARDINAL BOYS</h3>
+                      <p class="work-desc">Documentary on the Seattle Academy Boys Basketball Season</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Add your works/portfolio content here -->
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2>AVĀZ</h2>
+            <br>
+            <div class="content">
+                <p>Avāz, meaning "voice," specializes in storytelling. 
+                    <br>
+                    <br>
+                    Storytelling has taken many forms across the ages, and we now find ourselves in a new phase. 
+                    <br>
+                    <br>
+                    With the internet, the ability to reach thousands or even millions is within reach of anyone. The most optimized format to do so is through video. 
+                    <br>
+                    <br>
+                    With over 5 years of video production experience, Avāz Productions serves as the vessel to produce unique and high quality media catered to your vision and brand. </p>
+                <!-- Add your about content here -->
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2 style="text-align:center;">Contact</h2>
+            <div class="content" style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                <div style="display: flex; justify-content: center; align-items: center; gap: 1.2rem; margin-top: 1.2rem;">
+                    <a href="https://instagram.com/avazproductions" target="_blank" class="icon-link">
+                        <img src="instagram.webp" alt="Instagram" style="height:48px; width:auto;" />
+                    </a>
+                </div>
+                <p style="font-family: 'IBM Plex Mono', monospace; text-align: center; margin-top: 1.2rem; color: #fcfcfc; font-size: 1rem;">avazproductions1469@gmail.com</p>
+                <!-- Add your contact form or information here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- YouTube Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-overlay"></div>
+        <div class="video-modal-content">
+            <div class="video-modal-iframe-wrapper">
+                <iframe id="videoModalIframe" width="560" height="315" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="border:0;"></iframe>
+            </div>
+            <div class="video-modal-description">
+                <h3 id="videoModalTitle" class="video-modal-title">Service Title</h3>
+                <p id="videoModalDesc" class="video-modal-desc">Service description goes here.</p>
+            </div>
+            <button class="video-modal-close" aria-label="Close video">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Works Video Modal -->
+    <div id="worksVideoModal" class="works-video-modal">
+        <div class="works-video-modal-overlay"></div>
+        <div class="works-video-modal-content">
+            <div class="works-video-modal-video">
+                <iframe id="worksVideoModalIframe" width="560" height="315" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="border:0;"></iframe>
+            </div>
+            <div class="works-video-modal-description">
+                <h3 id="worksVideoModalTitle">Title Here</h3>
+                <p id="worksVideoModalDesc">Description goes here. This panel can be filled dynamically based on the work clicked.</p>
+            </div>
+            <button class="works-video-modal-close" aria-label="Close video">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Vimeo Video Modal -->
+    <div id="vimeoModal" class="vimeo-modal">
+        <div class="vimeo-modal-overlay"></div>
+        <div class="vimeo-modal-content">
+            <button class="vimeo-modal-close" aria-label="Close video">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+            <div class="vimeo-modal-iframe-wrapper">
+                <iframe id="vimeoModalIframe" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/seamless-scroll-polyfill@latest/lib/bundle.min.js"></script>
+    <script>
+      seamless.polyfill();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,1291 @@
+/* Font Face Declaration */
+@font-face {
+    font-family: 'Upheaval';
+    src: url('fonts/upheavtt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: #000000;
+    color: #fcfcfc;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Navigation */
+.main-nav {
+    position: fixed;
+    left: 3.5rem;
+    top: 2rem;
+    z-index: 10;
+    transition: opacity 0.2s ease;
+}
+
+.main-nav ul {
+    list-style: none;
+}
+
+.main-nav li {
+    margin-bottom: 1rem;
+}
+
+.main-nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+    letter-spacing: 0.5px;
+    text-transform: none;
+}
+
+.main-nav a:hover {
+    color: #bdbdbd;
+}
+
+/* Logo - Desktop size */
+.logo {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem; /* Back to original desktop size */
+    z-index: 10;
+    transition: opacity 0.15s ease;
+    font-family: 'Libre Bodoni', serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.logo .kalam {
+    font-weight: 700;
+    font-style: normal;
+}
+
+.logo .studios {
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Hero Section with Video Background */
+.hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.vimeo-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.vimeo-background iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.5);
+    pointer-events: none;
+}
+
+/* Content Sections */
+.section {
+    min-height: 100vh;
+    padding: 6rem 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    background-color: #000;
+    z-index: 2;
+}
+
+.section h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.section .content {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.section .service-title {
+    font-style: normal !important;
+}
+
+/* Section-specific backgrounds */
+#works {
+    background-color: #0a0a0a;
+}
+
+#about {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('about.jpg') center center/cover no-repeat;
+    padding-top: 0.1rem;
+}
+
+#contact {
+    background-color: #0a0a0a;
+}
+
+/* Video Container */
+.video-container {
+    position: absolute;
+    width: 50%;
+    height: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+#main-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.floating-menu {
+    position: fixed;
+    top: 2rem;
+    left: 3.5rem;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.floating-menu.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-toggle {
+    background: rgba(0, 0, 0, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background: rgba(0, 0, 0, 1);
+    transform: translateY(-2px);
+}
+
+.menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #fcfcfc;
+    transition: all 0.3s ease;
+}
+
+.floating-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.1rem;
+    list-style: none;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    min-width: 120px;
+    max-width: 180px;
+}
+
+.floating-menu.active .floating-nav {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.floating-nav li {
+    margin-bottom: 1rem;
+}
+
+.floating-nav li:last-child {
+    margin-bottom: 0;
+}
+
+.floating-nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+    letter-spacing: 0.5px;
+    text-transform: none;
+    display: block;
+}
+
+.floating-nav a:hover {
+    color: #bdbdbd;
+}
+
+/* Remove old back-to-top styles */
+.back-to-top {
+    display: none;
+}
+
+.services-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+.slides-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 320px;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slides-track {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    transition: transform 1.2s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: opacity 0.4s;
+}
+
+.slide:not(.active) {
+    opacity: 1;
+}
+
+.slide.active {
+    display: flex;
+    opacity: 1;
+    z-index: 1;
+}
+
+.slide-image {
+    flex: 0 0 auto;
+    height: auto;
+    max-width: 540px;
+    max-height: 540px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+    overflow: hidden;
+    margin-right: 4rem;
+}
+
+.slide-image img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    max-height: 540px;
+    object-fit: contain;
+    display: block;
+}
+
+.slide-content {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-width: 0;
+}
+
+.service-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-style: normal;
+}
+
+.service-description {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    color: #fcfcfc;
+    max-width: 500px;
+}
+
+.workslink {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    background: #000;
+    border: 1.2px solid #767676;
+    color: #767676;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    padding: 0.5em 1.4em;
+    transition: color 0.2s, border-color 0.2s;
+    font-style: normal;
+    border-radius: 0;
+    display: inline-block;
+}
+.workslink:hover {
+    color: #fff;
+    border-color: #888;
+}
+
+.main-arrow {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6) !important;
+    border-radius: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: background 0.3s ease !important;
+    color: #fcfcfc;
+    font-size: 2.5rem;
+    cursor: pointer;
+    z-index: 2;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.main-arrow-left {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6) !important;
+    border-radius: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: background 0.3s ease !important;
+    color: #fcfcfc;
+    font-size: 2.5rem;
+    cursor: pointer;
+    z-index: 2;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.main-arrow:hover,
+.main-arrow-left:hover {
+    background: rgba(0, 0, 0, 0.8) !important;
+}
+
+.main-arrow .arrow-svg,
+.main-arrow-left .arrow-svg {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+.services-slider {
+    position: relative;
+}
+
+.slides-wrapper {
+    position: relative;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 0.75rem;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #444;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.dot.active {
+    background: #fcfcfc;
+}
+
+.video-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-modal.active {
+    display: flex;
+}
+
+.video-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1;
+}
+
+.video-modal-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    background: #181818;
+    border-radius: 0;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+    max-width: 1200px;
+    max-height: 90vh;
+    overflow: hidden;
+    align-items: stretch;
+}
+
+.video-modal-iframe-wrapper {
+    flex: 2 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+.video-modal-iframe-wrapper iframe {
+    width: 54vw;
+    height: 70vh;
+    min-width: 400px;
+    min-height: 225px;
+    border: none !important;
+    background: #000 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    display: block;
+}
+
+.video-modal-description {
+    flex: 1 1 0;
+    background: #111;
+    color: #fcfcfc;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.video-modal-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fcfcfc;
+}
+
+.video-modal-desc {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+    color: #fcfcfc;
+}
+
+.video-modal-close {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    color: #fcfcfc;
+    font-size: 1.3rem;
+    cursor: pointer;
+    z-index: 3001;
+    transition: color 0.2s;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video-modal-close svg {
+    width: 1.1em;
+    height: 1.1em;
+    stroke-width: 1.2;
+}
+.video-modal-close:hover {
+    color: #bdbdbd;
+}
+
+.section-title {
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0rem;
+    margin-left: 0;
+    color: #fcfcfc;
+    text-transform: uppercase;
+}
+
+.section-title-img {
+    display: block;
+    margin: 0 auto 2.5rem auto;
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+}
+
+.works-list {
+    max-width: 1400px;
+    width: 100%;
+    margin: 2rem auto 0 auto;
+    padding: 0 3vw;
+    box-sizing: border-box;
+}
+
+.work-row {
+    display: flex;
+    align-items: center;
+    min-height: 90px;
+    height: 90px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.work-row.highlight {
+    background: rgba(16, 16, 16, 0.95); 
+}
+
+.work-row:hover {
+    background: rgba(40, 40, 40, 0.95);
+}
+
+.work-row.highlight:hover {
+    background: rgba(60, 60, 60, 0.95);
+}
+
+.work-image {
+    width: 160px;
+    height: 90px;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    filter: none;
+    flex-shrink: 0;
+}
+
+.work-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 1.5rem;
+    flex: 1;
+}
+
+.work-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fcfcfc;
+    margin-bottom: 0.1rem;
+    letter-spacing: 1px;
+}
+
+.work-desc {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: #fcfcfc;
+    margin: 0;
+}
+
+.works-video-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3000;
+    align-items: center;
+    justify-content: center;
+}
+.works-video-modal.active {
+    display: flex;
+}
+.works-video-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.85);
+    z-index: 1;
+}
+.works-video-modal-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    background: #181818;
+    border-radius: 0;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+    max-width: 1200px;
+    max-height: 90vh;
+    overflow: hidden;
+    align-items: stretch;
+}
+.works-video-modal-video {
+    flex: 2 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+.works-video-modal-video iframe {
+    width: 54vw;
+    height: 70vh;
+    min-width: 400px;
+    min-height: 225px;
+    border: none;
+    background: #000;
+}
+.works-video-modal-description {
+    flex: 1 1 0;
+    background: #111;
+    color: #fcfcfc;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 300px;
+    max-width: 500px;
+}
+#worksVideoModalTitle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fcfcfc;
+}
+#worksVideoModalDesc {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+    color: #fcfcfc;
+}
+.works-video-modal-close {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    color: #fcfcfc;
+    font-size: 1.3rem;
+    cursor: pointer;
+    z-index: 3001;
+    transition: color 0.2s;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.works-video-modal-close svg {
+    width: 1.1em;
+    height: 1.1em;
+    stroke-width: 1.2;
+}
+.works-video-modal-close:hover {
+    color: #bdbdbd;
+}
+@media (max-width: 900px) {
+    .works-video-modal-content {
+        flex-direction: column;
+        max-width: 98vw;
+        max-height: 98vh;
+    }
+    .works-video-modal-video iframe {
+        width: 90vw;
+        height: 30vh;
+        min-width: 0;
+    }
+    .works-video-modal-description {
+        max-width: 100vw;
+        min-width: 0;
+        padding: 1.2rem 1rem;
+    }
+}
+
+#works.section {
+    margin-bottom: 5rem;
+    padding-bottom: 5rem;
+}
+
+#about.section {
+    padding-top: 0.1rem;
+}
+
+#about h2 {
+    text-align: center;
+}
+#about .content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#about .content p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9rem;
+    color: #fcfcfc;
+}
+
+.arrow-svg {
+    stroke: #888;
+    transition: stroke 0.2s;
+}
+.main-arrow:hover .arrow-svg,
+.main-arrow-left:hover .arrow-svg {
+    stroke: #fff;
+}
+
+.scroll-down-arrow {
+    position: absolute;
+    left: 50%;
+    bottom: 1.2rem;
+    transform: translateX(-50%);
+    z-index: 10;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.3s;
+    pointer-events: auto;
+}
+.scroll-down-arrow.faded {
+    opacity: 0;
+    pointer-events: none;
+}
+.arrow-circle {
+    background: rgba(20, 20, 20, 0.55);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+.scroll-down-arrow:hover .arrow-circle {
+    background: rgba(40, 40, 40, 0.85);
+}
+.scroll-down-arrow .arrow-svg {
+    width: 28px;
+    height: 28px;
+}
+.scroll-down-arrow:hover .arrow-svg {
+    stroke: #fff;
+}
+
+#services .section-title,
+#works .section-title,
+#works h2 {
+    margin-left: 3vw;
+    text-align: left;
+}
+
+.icon-link img {
+    transition: filter 0.2s;
+    border-radius: 8px;
+}
+.icon-link:hover img {
+    filter: brightness(0.6);
+}
+
+.sound-button {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #fcfcfc;
+    color: #fcfcfc;
+    padding: 0.8rem 1.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.sound-button:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateY(-2px);
+}
+
+.sound-icon {
+    font-size: 1.2rem;
+}
+
+.vimeo-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.vimeo-modal.active {
+    display: flex;
+}
+
+.vimeo-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1;
+}
+
+.vimeo-modal-content {
+    position: relative;
+    z-index: 2;
+    background: #111;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-width: 96vw;
+    max-height: 90vh;
+}
+
+.vimeo-modal-iframe-wrapper {
+    width: 96vw;
+    height: 86vh;
+    max-width: 1200px;
+    max-height: 86vh;
+    padding: 0;
+    margin: 0;
+    background: #000 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden;
+}
+
+.vimeo-modal-iframe-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none !important;
+    background: #000 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    display: block;
+}
+
+.vimeo-modal-close {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    color: #fcfcfc;
+    font-size: 1.3rem;
+    cursor: pointer;
+    z-index: 3001;
+    transition: color 0.2s;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vimeo-modal-close svg {
+    width: 1.1em;
+    height: 1.1em;
+    stroke-width: 1.2;
+}
+
+.vimeo-modal-close:hover {
+    color: #bdbdbd;
+}
+
+.hero .workslink {
+    position: absolute;
+    bottom: 1.2rem;
+    right: 2rem;
+    z-index: 10;
+    background: transparent !important;
+}
+
+/* iPhone Optimization - Square Aspect Ratio */
+@media screen and (max-width: 480px) {
+    /* Make sections square aspect ratio */
+    .section {
+        min-height: 100vw; /* Square - width equals height */
+        padding: 2rem 1.5rem;
+    }
+    
+    .hero {
+        height: 100vw; /* Square hero section */
+    }
+    
+    /* Adjust logo for mobile */
+    .logo {
+        font-size: 1.0rem;
+        top: 2.0rem;
+    }
+    
+    /* Adjust navigation for mobile */
+    .main-nav {
+        left: 1.5rem;
+        top: 1.5rem;
+    }
+    
+    .main-nav a {
+        font-size: 0.7rem;
+    }
+    
+    /* Adjust scroll arrow for square layout */
+    .scroll-down-arrow {
+        bottom: 1rem;
+    }
+    
+    /* Adjust watch button for square layout */
+    .hero .workslink {
+        bottom: 0.5rem; /* Changed from 1rem to move it lower */
+        right: auto; /* Remove right positioning */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Perfect center */
+        font-size: 0.6rem;
+        padding: 0.4em 1.2em;
+    }
+    
+    /* Section h2 titles for mobile */
+    .section h2 {
+        font-size: 1.0rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Services slider adjustments for square layout */
+    .services-slider {
+        height: auto;
+        padding: 1rem 0;
+    }
+    
+    /* Works section adjustments */
+    .works-list {
+        padding: 0 1.5rem;
+    }
+    
+    .work-row {
+        min-height: 70px;
+        height: 70px;
+    }
+    
+    .work-image {
+        width: 120px;
+        height: 70px;
+    }
+    
+    .work-title {
+        font-size: 0.8rem;
+    }
+    
+    .work-desc {
+        display: none !important; /* Hide descriptions on mobile */
+    }
+    
+    /* Show floating menu immediately on mobile */
+    .floating-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        top: 1.5rem; /* Match logo positioning */
+        left: 1rem; /* Closer to left edge */
+    }
+    
+    /* Make menu toggle smaller */
+    .menu-toggle {
+        width: 32px;
+        height: 32px;
+        padding: 6px;
+    }
+    
+    .menu-toggle span {
+        width: 16px;
+        height: 1.5px;
+    }
+    
+    /* Adjust floating nav size and position */
+    .floating-nav {
+        margin-top: 0.05rem;
+        padding: 0.4rem 0.8rem;
+        min-width: 100px;
+        max-width: 140px;
+    }
+    
+    .floating-nav a {
+        font-size: 0.7rem;
+    }
+    
+    /* Hide the main navigation on mobile since we have the floating menu */
+    .main-nav {
+        display: none;
+    }
+    
+    /* Hide scroll arrow on mobile */
+    .scroll-down-arrow {
+        display: none;
+    }
+    
+    /* Services slider mobile adjustments */
+    .slide {
+        flex-direction: column !important; /* Stack image above content */
+        align-items: center !important;
+        text-align: center !important;
+    }
+    
+    .slide-image {
+        max-width: 80vw !important; /* Make it fit the mobile screen width */
+        max-height: 80vw !important; /* Square aspect ratio */
+        width: 80vw !important;
+        height: 80vw !important;
+        margin-right: 0 !important; /* Remove side margin */
+        margin-bottom: 1.5rem !important; /* Add space below image */
+    }
+    
+    .slide-image img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important; /* Ensure it fills the square properly */
+    }
+    
+    .slide-content {
+        flex: none !important; /* Don't stretch */
+        width: 100% !important;
+        align-items: center !important; /* Center the content */
+        text-align: center !important;
+    }
+    
+    .service-description {
+        text-align: center !important;
+        max-width: 90% !important;
+    }
+    
+    /* About section mobile adjustments */
+    #about h2 {
+        font-size: 0.9rem !important;
+        margin-top: 2rem !important; /* Add top margin to push title down */
+        margin-bottom: 1.5rem !important;
+        text-align: center !important;
+    }
+    
+    #about .content {
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
+        text-align: center !important;
+    }
+    
+    #about .content p {
+        font-size: 0.8rem !important;
+        max-width: 85% !important;
+        margin: 0 auto 1rem auto !important;
+    }
+    
+    /* Contact section mobile adjustments - make it longer */
+    #contact.section {
+        min-height: 150vw !important; /* Taller than square sections */
+        justify-content: center !important; /* Keep content centered vertically */
+    }
+    
+    #contact p {
+        font-size: 0.7rem !important;
+    }
+    
+    /* Fix Vimeo modal interaction on mobile */
+    .vimeo-modal-overlay {
+        cursor: pointer !important;
+        -webkit-tap-highlight-color: transparent !important;
+        touch-action: manipulation !important;
+        pointer-events: auto !important;
+        z-index: 1 !important;
+    }
+    
+    .vimeo-modal-content {
+        pointer-events: none !important; /* Change to none to allow events to pass through */
+        z-index: 2 !important;
+    }
+    
+    .vimeo-modal-iframe-wrapper {
+        pointer-events: auto !important; /* Enable touch on iframe wrapper */
+        touch-action: manipulation !important;
+        z-index: 2 !important;
+    }
+    
+    .vimeo-modal-iframe-wrapper iframe {
+        pointer-events: auto !important; /* Enable touch on iframe */
+        touch-action: manipulation !important;
+    }
+    
+    /* Ensure modal takes full screen on mobile */
+    .vimeo-modal {
+        width: 100vw !important;
+        height: 100vh !important;
+        pointer-events: auto !important;
+    }
+    
+    /* Fix Vimeo modal close button position on mobile */
+    .vimeo-modal-close {
+        position: fixed !important; /* Use fixed positioning */
+        top: 1rem !important;
+        right: 1rem !important;
+        background: none !important; /* Remove background */
+        border-radius: 0 !important; /* Remove border radius */
+        width: 44px !important; /* Larger for better touch */
+        height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 2001 !important; /* Very high z-index */
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+        border: none !important; /* Remove border */
+    }
+    
+    .vimeo-modal-close svg {
+        width: 1.2em !important;
+        height: 1.2em !important;
+        stroke: #fff !important;
+        pointer-events: none !important; /* Let clicks pass to button */
+    }
+}
+
+/* Specific iPhone sizes for fine-tuning */
+@media screen and (max-width: 390px) and (max-height: 844px) {
+    /* iPhone 12/13/14 specific adjustments */
+    .section {
+        min-height: 390px; /* Force square on these devices */
+    }
+    
+    .hero {
+        height: 390px;
+    }
+}
+
+@media screen and (max-width: 375px) and (max-height: 667px) {
+    /* iPhone SE specific adjustments */
+    .section {
+        min-height: 375px;
+    }
+    
+    .hero {
+        height: 375px;
+    }
+}
+
+@media (max-width: 900px) {
+    .video-modal-content {
+        flex-direction: column;
+        max-width: 98vw;
+        max-height: 98vh;
+    }
+    .video-modal-iframe-wrapper iframe {
+        width: 90vw;
+        height: 30vh;
+        min-width: 0;
+    }
+    .video-modal-description {
+        max-width: 100vw;
+        min-width: 0;
+        padding: 1.2rem 1rem;
+    }
+} 

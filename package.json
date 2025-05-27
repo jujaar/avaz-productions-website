@@ -1,0 +1,14 @@
+{
+  "name": "kalam-studios",
+  "version": "1.0.0",
+  "description": "Kalam Studios Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "http": "^0.0.1-security",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
+} 
